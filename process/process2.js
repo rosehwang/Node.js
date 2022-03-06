@@ -4,7 +4,22 @@
  *   우선적으로 처리함
  * - nextTick를 통해 추가한 콜백 함수는 'next tick queue'에 추가됨
 */
-
+//import process from 'process';
 const { nextTick } = require('process');
 
 console.log('start');
+
+setTimeout(() => {
+    console.log("timeout callback");
+});
+
+nextTick(() => {
+  console.log("nextTick callback");  
+});
+
+console.log('end');
+/**start
+ * end
+ * nextTick callback
+ * timeout callback
+ */
