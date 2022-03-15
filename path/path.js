@@ -24,5 +24,58 @@ console.log(process.env.PATH);//
 process.env.PATH.split(path.delimiter);
   
 /**
- * 
+ * path.dirname(path)
+ * -파일이 위치한 폴더 경로를 반환합니다. 
  */
+console.log(__filename);
+console.log(path.dirname(__filename));
+
+/**
+ * path.extname(path)
+ * -파일의 확장자를 반환합니다.
+ */
+console.log(path.extname('index.html'));
+
+/**
+ * path.format(pathObject)
+ * -pathObject로 주어진 프로퍼티를 사용해서 경로 문자열을 반환합니다.
+ */
+
+path.format({
+ root: '/ignored',
+ dir : '/home/user/dir',
+ base: 'file.txt'
+});
+
+console.log('format :: {} '+path);
+
+/**
+ * path.isAbsolute
+ * - 주어진 파일의 경로가 절대 경로인지 상대 경로인지 알 수 있습니다.
+ *   절대경로면 true를 반환합니다.
+ */
+
+console.log(path.isAbsolute);
+
+/**
+ * path.join([..paths])
+ * - 문자열로 주어진 경로들을 모두 합쳐서 하나의 경로로 만들어서 반환합니다.
+ */
+path.join('/foo', 'bar', 'baz/asdf');
+console.log(path);
+
+/**
+ * path.parse(path)
+ * - 문자열로 된 경로를 pathObject로 반환합니다.
+ */
+
+path.parse('/home/user/dir/file.txt');
+console.log(path);
+
+/**
+ * path.sep
+ * - 경로 구분자를 반환.
+ * - 윈도우는 역슬래시(\), 맥은 슬래시(/) 반환.
+ */
+console.log(path.sep);
+
